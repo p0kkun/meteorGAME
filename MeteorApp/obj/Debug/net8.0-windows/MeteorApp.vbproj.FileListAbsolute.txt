@@ -15,3 +15,4 @@ C:\Users\itsys\Desktop\MeteorApp\MeteorApp\obj\Debug\net8.0-windows\refint\Meteo
 C:\Users\itsys\Desktop\MeteorApp\MeteorApp\obj\Debug\net8.0-windows\MeteorApp.pdb
 C:\Users\itsys\Desktop\MeteorApp\MeteorApp\obj\Debug\net8.0-windows\MeteorApp.genruntimeconfig.cache
 C:\Users\itsys\Desktop\MeteorApp\MeteorApp\obj\Debug\net8.0-windows\ref\MeteorApp.dll
+C:\Users\itsys\Desktop\MeteorApp\MeteorApp\obj\Debug\net8.0-windows\MeteorApp.sourcelink.json
