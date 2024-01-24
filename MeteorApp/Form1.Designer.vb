@@ -34,6 +34,10 @@ Partial Class Form1
         pTitle = New PictureBox()
         Timer1 = New Timer(components)
         pBeam = New PictureBox()
+        pMeteor2 = New PictureBox()
+        pDeth = New PictureBox()
+        pBG2 = New PictureBox()
+        pPlayer2 = New PictureBox()
         CType(pBG, ComponentModel.ISupportInitialize).BeginInit()
         CType(pMeteor, ComponentModel.ISupportInitialize).BeginInit()
         CType(pBase, ComponentModel.ISupportInitialize).BeginInit()
@@ -43,6 +47,10 @@ Partial Class Form1
         CType(pPlayer, ComponentModel.ISupportInitialize).BeginInit()
         CType(pTitle, ComponentModel.ISupportInitialize).BeginInit()
         CType(pBeam, ComponentModel.ISupportInitialize).BeginInit()
+        CType(pMeteor2, ComponentModel.ISupportInitialize).BeginInit()
+        CType(pDeth, ComponentModel.ISupportInitialize).BeginInit()
+        CType(pBG2, ComponentModel.ISupportInitialize).BeginInit()
+        CType(pPlayer2, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
         ' pBG
@@ -130,11 +138,51 @@ Partial Class Form1
         pBeam.TabIndex = 8
         pBeam.TabStop = False
         ' 
+        ' pMeteor2
+        ' 
+        pMeteor2.Image = My.Resources.Resources.p_meteor2
+        pMeteor2.Location = New Point(467, 183)
+        pMeteor2.Name = "pMeteor2"
+        pMeteor2.Size = New Size(154, 189)
+        pMeteor2.TabIndex = 9
+        pMeteor2.TabStop = False
+        ' 
+        ' pDeth
+        ' 
+        pDeth.Image = My.Resources.Resources.p_deth
+        pDeth.Location = New Point(0, 1)
+        pDeth.Name = "pDeth"
+        pDeth.Size = New Size(100, 50)
+        pDeth.TabIndex = 10
+        pDeth.TabStop = False
+        ' 
+        ' pBG2
+        ' 
+        pBG2.Image = My.Resources.Resources.p_bg2
+        pBG2.Location = New Point(240, 252)
+        pBG2.Name = "pBG2"
+        pBG2.Size = New Size(100, 50)
+        pBG2.TabIndex = 11
+        pBG2.TabStop = False
+        ' 
+        ' pPlayer2
+        ' 
+        pPlayer2.Image = My.Resources.Resources.p_player2
+        pPlayer2.Location = New Point(51, 65)
+        pPlayer2.Name = "pPlayer2"
+        pPlayer2.Size = New Size(100, 50)
+        pPlayer2.TabIndex = 12
+        pPlayer2.TabStop = False
+        ' 
         ' Form1
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(664, 481)
+        Controls.Add(pPlayer2)
+        Controls.Add(pBG2)
+        Controls.Add(pDeth)
+        Controls.Add(pMeteor2)
         Controls.Add(pBeam)
         Controls.Add(pTitle)
         Controls.Add(pPlayer)
@@ -155,6 +203,10 @@ Partial Class Form1
         CType(pPlayer, ComponentModel.ISupportInitialize).EndInit()
         CType(pTitle, ComponentModel.ISupportInitialize).EndInit()
         CType(pBeam, ComponentModel.ISupportInitialize).EndInit()
+        CType(pMeteor2, ComponentModel.ISupportInitialize).EndInit()
+        CType(pDeth, ComponentModel.ISupportInitialize).EndInit()
+        CType(pBG2, ComponentModel.ISupportInitialize).EndInit()
+        CType(pPlayer2, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
     End Sub
 
@@ -168,5 +220,9 @@ Partial Class Form1
     Friend WithEvents pTitle As PictureBox
     Friend WithEvents Timer1 As Timer
     Friend WithEvents pBeam As PictureBox
+    Friend WithEvents pMeteor2 As PictureBox
+    Friend WithEvents pDeth As PictureBox
+    Friend WithEvents pBG2 As PictureBox
+    Friend WithEvents pPlayer2 As PictureBox
 
 End Class

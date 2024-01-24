@@ -83,6 +83,26 @@ Namespace My.Resources
         '''<summary>
         '''  型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
         '''</summary>
+        Friend ReadOnly Property p_bg2() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("p_bg2", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+        '''</summary>
+        Friend ReadOnly Property p_deth() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("p_deth", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+        '''</summary>
         Friend ReadOnly Property p_explosion() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("p_explosion", resourceCulture)
@@ -113,6 +133,16 @@ Namespace My.Resources
         '''<summary>
         '''  型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
         '''</summary>
+        Friend ReadOnly Property p_meteor2() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("p_meteor2", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+        '''</summary>
         Friend ReadOnly Property p_msg() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("p_msg", resourceCulture)
@@ -126,6 +156,16 @@ Namespace My.Resources
         Friend ReadOnly Property p_player() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("p_player", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+        '''</summary>
+        Friend ReadOnly Property p_player2() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("p_player2", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
