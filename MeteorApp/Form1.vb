@@ -87,7 +87,7 @@ Public Class Form1
         RR = 35 / 680 * canvas.Width ' 隕石の半径をスケーリング
 
         ' オブジェクトの描画
-        g.DrawImage(pPlayer.Image, New Rectangle(playerX, playerY, PW, PH))
+        g.DrawImage(pPlayer2.Image, New Rectangle(playerX, playerY, PW, PH))
         For i As Long = 0 To meteorcnt
             Dim meteorSize As Long = meteorSizes(i)
             Dim meteorX As Integer = enX(i) / 680 * canvas.Width
@@ -113,6 +113,10 @@ Public Class Form1
         pMsg.Hide()
         pTitle.Hide()
         pBeam.Hide()
+        pMeteor2.Hide()
+        pBG2.Hide()
+        pPlayer2.Hide()
+        pDeth.Hide()
         LoadHighScore()
         DisplayHighScore()
         gameInit()
@@ -126,16 +130,16 @@ Public Class Form1
             ex = Cpos.X + rand.Next(40)
             ey = Cpos.Y + rand.Next(50)
         End If
-        g.DrawImage(pBG.Image, New Rectangle(0, 0, 680, 520))
+        g.DrawImage(pBG2.Image, New Rectangle(0, 0, 680, 520))
         For i As Long = 0 To meteorcnt
             ' 隕石の現在の大きさを取得
             Dim meteorDiameter As Long = meteorSizes(i)
 
             ' 隕石を描画
-            g.DrawImage(pMeteor.Image, New Rectangle(enX(i), enY(i), meteorDiameter, meteorDiameter))
+            g.DrawImage(pMeteor2.Image, New Rectangle(enX(i), enY(i), meteorDiameter, meteorDiameter))
         Next
-        g.DrawImage(pPlayer.Image, New Rectangle(Cpos.X, Cpos.Y, PW, PH))
-        g.DrawImage(pExp.Image, New Rectangle(ex - ecnt / 2, ey - ecnt / 2, ecnt, ecnt))
+        g.DrawImage(pPlayer2.Image, New Rectangle(Cpos.X - 35, Cpos.Y - 35, PW + 30, PH + 30))
+        g.DrawImage(pExp.Image, New Rectangle(ex - ecnt / 2 - 25, ey - ecnt / 2 - 23, ecnt, ecnt))
         msgcnt += 1
         If msgcnt > 60 Then
             ' ゲームオーバー画像のサイズ
@@ -166,8 +170,8 @@ Public Class Form1
     End Sub
 
     Private Sub gameInit()
-        PW = 41  '自機の幅
-        PH = 51  '自機の高さ
+        PW = 61  '自機の幅
+        PH = 71  '自機の高さ
         RR = 70 / 2  '隕石の半径
         meteorSpeed = 5  ' 隕石のスピードを初期値に戻す
         beams.Clear()    ' ビームのリストをクリア
@@ -193,7 +197,7 @@ Public Class Form1
             playerExplosion()
             Exit Sub
         End If
-        g.DrawImage(pBG.Image, New Rectangle(0, 0, 680, 520))
+        g.DrawImage(pBG2.Image, New Rectangle(0, 0, 680, 520))
 
         ' スコアに基づいて隕石のスピードを調整
         If score Mod 50 = 0 Then
@@ -204,7 +208,7 @@ Public Class Form1
         For i As Long = 0 To meteorcnt
             enY(i) += meteorSpeed
             Dim meteorDiameter As Long = meteorSizes(i) ' 隕石の直径
-            g.DrawImage(pMeteor.Image, New Rectangle(enX(i), enY(i), meteorDiameter, meteorDiameter))
+            g.DrawImage(pMeteor2.Image, New Rectangle(enX(i), enY(i), meteorDiameter, meteorDiameter))
             If enY(i) > pBase.Height Then   '画面外に出たら上に戻す
                 enX(i) = rand.Next(1, 550)
                 enY(i) = -rand.Next(100, 300)
@@ -235,7 +239,7 @@ Public Class Form1
                 ' 隕石の現在の大きさを取得
                 Dim meteorDiameter As Long = meteorSizes(j)
 
-                If beam.Y < enY(j) + meteorDiameter AndAlso beam.Y > enY(j) AndAlso beam.X > enX(j) AndAlso beam.X < enX(j) + meteorDiameter Then
+                If beam.Y < enY(j) + meteorDiameter + 40 AndAlso beam.Y > enY(j) - 40 AndAlso beam.X > enX(j) AndAlso beam.X < enX(j) + meteorDiameter Then
                     ' 隕石を画面上部のランダムな位置に再配置
                     enX(j) = rand.Next(1, 650)
                     enY(j) = rand.Next(1, 900) - 1000
@@ -245,7 +249,7 @@ Public Class Form1
             Next
             ' ビームを描画
             If Not beamsToRemove.Contains(beam) Then
-                g.DrawLine(Pens.Yellow, beam.X, beam.Y, beam.X, beam.Y - 10)
+                g.DrawLine(Pens.Yellow, beam.X - 22, beam.Y - 35, beam.X - 22, beam.Y - 45)
             End If
         Next
 
@@ -266,7 +270,7 @@ Public Class Form1
         If Cpos.Y > Height - PH Then
             Cpos.Y = Height - PH
         End If
-        g.DrawImage(pPlayer.Image, New Rectangle(Cpos.X, Cpos.Y, PW, PH))
+        g.DrawImage(pPlayer2.Image, New Rectangle(Cpos.X - 35, Cpos.Y - 35, PW + 30, PH + 30))
         score += 1
         g.DrawString("SCORE:" & score.ToString(), myFont, Brushes.White, 10, 10)
 
@@ -276,8 +280,8 @@ Public Class Form1
 
     '自機と隕石の当たり判定
     Private Sub hitCheck()
-        Dim pcx As Long = Cpos.X + (PW / 2)  '自機の中心座標
-        Dim pcy As Long = Cpos.Y + (PH / 2)
+        Dim pcx As Long = Cpos.X - 20 + (PW / 2)  '自機の中心座標
+        Dim pcy As Long = Cpos.Y - 30 + (PH / 2)
 
         For i As Long = 0 To meteorcnt
             ' 隕石の現在の大きさを取得
@@ -320,7 +324,7 @@ Public Class Form1
     'タイトル表示
     Private Sub titleDisp()
         msgcnt += 1
-        g.DrawImage(pBG.Image, New Rectangle(0, 0, 680, 520))
+        g.DrawImage(pBG2.Image, New Rectangle(0, 0, 680, 520))
         ' タイトル画像のサイズ
         Dim titleWidth As Integer = 350
         Dim titleHeight As Integer = 60
