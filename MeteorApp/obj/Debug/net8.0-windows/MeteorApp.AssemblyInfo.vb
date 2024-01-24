@@ -16,7 +16,7 @@ Imports System.Reflection
 <Assembly: System.Reflection.AssemblyCompanyAttribute("MeteorApp"),  _
  Assembly: System.Reflection.AssemblyConfigurationAttribute("Debug"),  _
  Assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0"),  _
- Assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+36d980f9bd04fcd606dac119bed7af6d77d623e3"),  _
+ Assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+991d6db4787bfed65b06a6f39e7c6bb0f7de4305"),  _
  Assembly: System.Reflection.AssemblyProductAttribute("MeteorApp"),  _
  Assembly: System.Reflection.AssemblyTitleAttribute("MeteorApp"),  _
  Assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0"),  _
